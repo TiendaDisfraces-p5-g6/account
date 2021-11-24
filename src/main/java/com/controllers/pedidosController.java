@@ -12,22 +12,24 @@ import java.util.stream.Stream;
 
 @RestController
 public class pedidosController {
-    private final pedidosRepositories listaRepositories;
+    private final pedidosRepositories pedidosRepositories;
     
-    public pedidosController (pedidosRepositories listaRepositorios){
-        this.listaRepositories = listaRepositorios;
+    public pedidosController (pedidosRepositories pedidosRepositories){
+        this.pedidosRepositories = pedidosRepositories;
     
     }
     
-    @GetMapping("/getPedidos")
-    List <pedidos> getPedidos(){
-        List <pedidos> pedidos = listaRepositories.findAll();
-        return pedidos;
+    @GetMapping("/getPedidos/{username}")
+    List <pedidos> getPedidos(@PathVariable String username){
+         List <pedidos> pedidosUsuario = 
+                pedidosRepositories.findByUsername(username);
+         
+        return pedidosUsuario;
    }
     
     
     @PostMapping("/setPedidos")
     pedidos setPedidos(@RequestBody pedidos pedido){
-        return listaRepositories.save(pedido);
+        return pedidosRepositories.save(pedido);
     }
 }
