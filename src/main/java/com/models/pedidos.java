@@ -7,7 +7,7 @@ import java.util.Date;
 public class pedidos {
     @Id
     private String id;
-    private String vendedor;
+    private String username;
     private Date fechaPedido;
     private int valor;
     private Date fechaEntrega;
@@ -15,11 +15,11 @@ public class pedidos {
     private String talla;
      
     
-    public pedidos (String id , Date fechaPedido , String vendedor , int valor , Date fechaEntrega , String nombrePrenda , String talla) {
+    public pedidos (String id , Date fechaPedido , String username , int valor , Date fechaEntrega , String nombrePrenda , String talla) {
         
         this.id = id; 
         this.fechaPedido = fechaPedido;
-        this.vendedor = vendedor;
+        this.username = username;
         this.valor = valor;
         this.fechaEntrega = fechaEntrega;
         this.nombrePrenda = nombrePrenda;
@@ -56,14 +56,14 @@ public class pedidos {
      * @return the vendedor
      */
     public String getVendedor() {
-        return vendedor;
+        return username;
     }
 
     /**
      * @param vendedor the vendedor to set
      */
     public void setVendedor(String vendedor) {
-        this.vendedor = vendedor;
+        this.username = vendedor;
     }
 
     /**
