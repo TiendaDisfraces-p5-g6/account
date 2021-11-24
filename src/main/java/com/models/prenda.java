@@ -6,17 +6,18 @@ import org.springframework.data.annotation.Id;
 
 public class prenda {
     @Id
+    private String id;
     private String vendedor;
     private String nombre;
     private String tipoPrenda;
     private String descripcion;
     private int cantidad;
     private int precio;
-    
     private String img;
     
-    public prenda(String nombre, String tipoPrenda , String descripcion , int cantidad , int precio , String vendedor , String img){
+    public prenda(String id , String nombre, String tipoPrenda , String descripcion , int cantidad , int precio , String vendedor , String img){
      
+        this.id = id;
         this.nombre = nombre;
         this.tipoPrenda = tipoPrenda;
         this.descripcion = descripcion;
@@ -27,15 +28,43 @@ public class prenda {
 
     }
 
+    public String getId(){
+        return id;
+    
+    }
+    
+    public void setId(){
+        this.id = id;
+    
+    }
+    
+    /**
+     * @return the vendedor
+     */
+    public String getVendedor() {
+        return vendedor;
+    }
 
-    
-    public String getNombre(){
+    /**
+     * @param vendedor the vendedor to set
+     */
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
         return nombre;
-     }
-    
-    public void setNombre(String nombre){
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
         this.nombre = nombre;
-     }
+    }
 
     /**
      * @return the tipoPrenda
@@ -94,20 +123,6 @@ public class prenda {
     }
 
     /**
-     * @return the vendedor
-     */
-    public String getVendedor() {
-        return vendedor;
-    }
-
-    /**
-     * @param vendedor the vendedor to set
-     */
-    public void setVendedor(String vendedor) {
-        this.vendedor = vendedor;
-    }
-
-    /**
      * @return the img
      */
     public String getImg() {
@@ -120,5 +135,9 @@ public class prenda {
     public void setImg(String img) {
         this.img = img;
     }
+
+
+    
+   
     
 }

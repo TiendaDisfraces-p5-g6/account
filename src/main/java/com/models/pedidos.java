@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class pedidos {
     @Id
+    private String id;
     private String vendedor;
     private Date fechaPedido;
     private int valor;
@@ -14,9 +15,9 @@ public class pedidos {
     private String talla;
      
     
-    public pedidos (Date fechaPedido , String vendedor , int valor , Date fechaEntrega , String nombrePrenda , String talla) {
+    public pedidos (String id , Date fechaPedido , String vendedor , int valor , Date fechaEntrega , String nombrePrenda , String talla) {
         
-       
+        this.id = id; 
         this.fechaPedido = fechaPedido;
         this.vendedor = vendedor;
         this.valor = valor;
@@ -26,6 +27,16 @@ public class pedidos {
         
      }
 
+    
+    public String getid(){
+        return id;
+    
+    }
+    
+    public void setId(String id){
+        this.id = id;
+    
+    }
 
     /**
      * @return the fechaPedido
