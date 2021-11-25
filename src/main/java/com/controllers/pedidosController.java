@@ -19,17 +19,25 @@ public class pedidosController {
     
     }
     
+    /*method with endponit to found all pedidos of an user*/
     @GetMapping("/getPedidos/{username}")
     List <pedidos> getPedidos(@PathVariable String username){
          List <pedidos> pedidosUsuario = 
                 pedidosRepositories.findByUsername(username);
-         
         return pedidosUsuario;
    }
     
-    
+    /*method with endponit to make pedidos*/
     @PostMapping("/setPedidos")
     pedidos setPedidos(@RequestBody pedidos pedido){
         return pedidosRepositories.save(pedido);
     }
+    
+    /*method with endponit to delete pedidos by id*/
+    @DeleteMapping("/delPedido/{id}")
+    String deletePedidos(@PathVariable String id){
+        pedidosRepositories.deleteById(id);
+        return "pedido eliminado con exito";
+    }
+    
 }

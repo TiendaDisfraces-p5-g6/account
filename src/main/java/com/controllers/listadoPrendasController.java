@@ -19,18 +19,20 @@ public class listadoPrendasController {
     
     }
     
-     @GetMapping("/")
+    /*message to test server*/
+    @GetMapping("/")
     String messageRoot(){
-        return  "Bienvenido pues";
+        return  "Bienvenido";
     }
     
-     
+    /*method with endponit to get all prendas*/ 
     @GetMapping("/getPrendas")
     List <prenda> getPrendas(){
         List <prenda> prendas  =  ListadoRepositories.findAll();
         return prendas;
     }
     
+    /*method with endpoint to make prendas*/
     @PostMapping("/setPrendas")
     prenda newPrenda(@RequestBody prenda Prenda){
          return ListadoRepositories.save(Prenda);
