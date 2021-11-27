@@ -24,6 +24,10 @@ public class pedidosController {
     List <pedidos> getPedidos(@PathVariable String username){
          List <pedidos> pedidosUsuario = 
                 pedidosRepositories.findByUsername(username);
+         if(pedidosUsuario.isEmpty()){
+             throw  new pedidosException("no se encontraron registros para el usuario: " + username);
+             
+         }
         return pedidosUsuario;
    }
     

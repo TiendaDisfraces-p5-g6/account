@@ -6,9 +6,7 @@ import com.models.prenda;
 import com.repositories.listadoRepositories;
 import com.exceptions.listadoPrendasEcxeption;
 import org.springframework.web.bind.annotation.*;
-import java.util.Date;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 @RestController
 public class listadoPrendasController {
@@ -29,6 +27,9 @@ public class listadoPrendasController {
     @GetMapping("/getPrendas")
     List <prenda> getPrendas(){
         List <prenda> prendas  =  ListadoRepositories.findAll();
+        if(prendas.isEmpty()){
+            throw new listadoPrendasEcxeption ("no se encontraron registros");
+        }
         return prendas;
     }
     
