@@ -48,8 +48,8 @@ public class prenda {
     /**
      * @param vendedor the vendedor to set
      */
-    public void setUsuario(String usuario) {
-        this.username = usuario;
+    public void setUsuario(String username) {
+        this.username = username;
     }
 
     /**
