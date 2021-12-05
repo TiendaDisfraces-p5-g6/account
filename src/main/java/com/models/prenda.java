@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 public class prenda {
     @Id
     private String id;
-    private String vendedor;
+    private String username;
     private String nombre;
     private String tipoPrenda;
     private String descripcion;
@@ -15,7 +15,7 @@ public class prenda {
     private int precio;
     private String img;
     
-    public prenda(String id , String nombre, String tipoPrenda , String descripcion , int cantidad , int precio , String vendedor , String img){
+    public prenda(String id , String nombre, String tipoPrenda , String descripcion , int cantidad , int precio , String username , String img){
      
         this.id = id;
         this.nombre = nombre;
@@ -23,7 +23,7 @@ public class prenda {
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.precio = precio;
-        this.vendedor = vendedor;
+        this.username = username;
         this.img = img;
 
     }
@@ -41,15 +41,15 @@ public class prenda {
     /**
      * @return the vendedor
      */
-    public String getVendedor() {
-        return vendedor;
+    public String getUsuario() {
+        return username;
     }
 
     /**
      * @param vendedor the vendedor to set
      */
-    public void setVendedor(String vendedor) {
-        this.vendedor = vendedor;
+    public void setUsuario(String usuario) {
+        this.username = usuario;
     }
 
     /**
