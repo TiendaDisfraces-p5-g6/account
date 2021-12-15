@@ -16,7 +16,7 @@ para la realizacion de este microservicio se utilizo el framework spring boot, c
  4. Se tienen un archivo que permite iniciar un servidor web de manera local el cual es mvnw.
 
  ### Requerimientos 
-        ```
+       ```
         groupId: org.springframework.boot
  	artifactId: spring-boot-starter-parent
 	version: 2.5.7		
@@ -49,7 +49,7 @@ para la realizacion de este microservicio se utilizo el framework spring boot, c
 	plugin:
 	groupId: org.springframework.boot
 	artifactId: spring-boot-maven-plugin
-        ```
+       ```
 
 ### Ejecución del proyecto
 
